@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1137px" height="107.764px" viewBox="0 0 1137 107.764" enable-background="new 0 0 1137 107.764" xml:space="preserve">
+<g>
+	<g>
+		<path fill="#DBD7CC" d="M-39,53.528c0,0,51-23,180-23c201,0,411,73,590,73C863,103.528,1101.698,0,1160.85,0
+			c0,59.527,0,137.981,0,137.981H-39V53.528z"/>
+	</g>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-39.5" y="-0.5" width="1200.85" height="138.981">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="-39.5" y="-0.5" width="1200.85" height="138.981" id="SVGID_1_">
+		<g filter="url(#Adobe_OpacityMaskFilter)">
+			
+				<image overflow="visible" enable-background="new    " width="5021" height="596" xlink:href="71119DC3.jpeg"  transform="matrix(0.2398 0 0 0.2384 -40.9993 -2.0002)">
+			</image>
+		</g>
+	</mask>
+	<g opacity="0.22" mask="url(#SVGID_1_)">
+		<path fill="none" stroke="#515151" stroke-miterlimit="10" d="M-39,53.528c0,0,51-23,180-23c201,0,411,73,590,73
+			C863,103.528,1101.698,0,1160.85,0c0,59.527,0,137.981,0,137.981H-39V53.528z"/>
+	</g>
+</g>
+</svg>
