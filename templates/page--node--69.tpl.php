@@ -1,7 +1,7 @@
 <!-- Header and Nav -->
 
 <div class="row top">
-<div class="large-3 small-12 columns logo">
+<div class="large-3 small-8 columns logo">
   <?php /*if ($linked_logo): ?>
         <?php print $linked_logo; ?>
   <?php endif;*/ ?>
@@ -9,7 +9,7 @@
     <img alt="Logo" src="/sites/all/themes/campo_foundation/img/center_campo_bofaellesskaberne.svg">
   </a>
 </div>
-<div class="large-12 small-12 columns show-for-small">
+<div class="large-12 small-4 columns show-for-small">
 	<img id="menuIcon" alt="menu" src="/sites/all/themes/campo_foundation/img/reorder.png">
 	<img id="searchIcon" alt="search" src="/sites/all/themes/campo_foundation/img/search.png">
 </div>
