@@ -41,10 +41,23 @@
  * @see template_process()
  */
 ?>
-<?php if ($block_html_id == "block-views-ambassadors-list-block") 
-       { $block_html_id ="ambassadors-slider";}
-      elseif ($block_html_id == "block-views-213d0774ea002059277369a863e19294") {
-        $block_html_id = "carousel";
+<?php if ($block_html_id == "block-views-ambassadors-list-block" ||
+          $block_html_id == "block-views-ambassadors-list-block-1" ||
+          $block_html_id == "block-views-ambassadors-list-block-2" ||
+          $block_html_id == "block-views-ambassadors-list-block-3" ||
+          $block_html_id == "block-views-ambassadors-list-block-4" ||
+          $block_html_id == "block-views-ambassadors-list-block-5" ||
+          $block_html_id == "block-views-ambassadors-list-block-6" ||
+          $block_html_id == "block-views-ambassadors-list-block-7") 
+               { $block_html_id ="ambassadors-slider";}
+      elseif ($block_html_id == "block-views-213d0774ea002059277369a863e19294" || 
+              $block_html_id == "block-views-558cb4c118199a5eb6ce50e0fad42b05" ||
+              $block_html_id == "block-views-67ece1dd086e88e97ceb2e5929d43450" ||
+              $block_html_id == "block-views-68e484eb70dba36f952e400f97c6e514" ||
+              $block_html_id == "block-views-61c8d7c534762150c123a53b591b55ae" ||
+              $block_html_id == "block-views-e275f3ae38ed83de597daea793364885" ||
+              $block_html_id == "block-views-51ce8f5472b5b12d48f96a8512a92c1f") {
+                   $block_html_id = "carousel";
       }
       elseif ( $block_html_id == "block-views-637a0364adff55868c96664f44384ae8") {
         $block_html_id ="pictures";

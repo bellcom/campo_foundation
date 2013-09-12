@@ -133,8 +133,14 @@ $(document).ready(function(){
 
 	$('.ccAccordion').on("click", ".head", function(e){
 		e.preventDefault();
-		$(this).closest('li').toggleClass('active').find('.content').not(':animated').slideToggle();
-
+		//$(this).closest('li').toggleClass('active').find('.content').not(':animated').slideToggle();
+                var $content = $(this).closest('li');                                
+                if($content.find('.content').is(":visible")){
+                     $content.toggleClass('active').find('.content').slideUp("slow");
+                } else {
+                     $content.siblings().removeClass('active').find('.content').slideUp("slow");
+                     $content.toggleClass('active').find('.content').slideToggle("slow");
+               }          
 	});
 
 

@@ -7,6 +7,8 @@
   background: url('../img/home.png') no-repeat 80% 50%;
   background-size: 100% 80%;
 }
+#navTop .right li.first a:hover,
+#navTop .right li.first.expanded a:hover
 #navTop .right li.first.leaf a:hover {
   text-decoration: none;
   color: #000 !important;
@@ -43,7 +45,7 @@
   float: right;
   position: relative;
   padding-right: 15px;
-  background: url('../img/black-arrow.png') no-repeat 111% 50%;
+  background: url('../img/arrow_accordion_black.png') no-repeat 105% 50%;
   background-size: 20% 70%
 }
 .highlight {
@@ -95,6 +97,13 @@ p {
   width : 100%;
 }
 
+#video_text_2 {
+  position : absolute;
+  bottom: 10%;
+  width : 100%;
+}
+
+
 #flexslider-1 img, object, embed {
 
   height : auto;
@@ -143,7 +152,7 @@ p {
   margin-top : 10px;
 }
 
-
+/* breakpoint 768px, mobile landscape */
 @media screen and (max-width: 48em) { 
   .view-video-list-p-videounderside .video_playIcon img {
     max-width: 20%;
@@ -156,7 +165,10 @@ p {
     position : relative;
     bottom: 0;
   }
-
+  #video_text_2 {
+    position : relative;
+    bottom: 0;
+  }
   #video_text img {
     display : none;
   }
@@ -200,20 +212,36 @@ p {
   }
 
 }
-/*
-@media screen and (min-width: 48em) and (max-width: 100em){
-  #overlay {
+/*  breakpoint 768px table and PC desktop version */
+@media screen and (min-width: 48em){
+  /*#overlay {
 
    width : 88%;
   }
 .embedded-video iframe {
     width : 100%;
 
+  }*/
+  .vision-lift { background: rgba(32,109,131, 0.75); padding: 20px; }
+  .section-reports iframe,
+  article .node iframe { margin: 0 auto; width: 100%}  
+}
+
+/* Breakpoint 769-1024 table.. */
+@media screen and (min-width: 48.06em ) and (max-width: 64em) {
+   #video_text_2 {
+    position : absolute;
+    bottom: 1%;
+    width : 100%;
   }
+  .video_playIcon img {
+    width:10%;
+  } 
 
+}
 
-} */
-@media screen and (min-width: 250px ) and (max-width: 400px) {
+/* Mobile */
+@media screen and (min-width: 20em ) and (max-width: 25em) {
   .embedded-video iframe {
     width : 100%;
     height : auto;
@@ -244,7 +272,7 @@ p {
 
 }
 
-@media screen and (max-width: 250px ) {
+@media screen and (max-width: 20em ) {
   #overlay {
 
      width : 65%;
@@ -275,6 +303,7 @@ p {
 
 }
 #vision {
+  position: relative;
   padding-top: 0px;
   padding-bottom:0px;
 }
@@ -286,6 +315,9 @@ p {
   position: absolute;
   width: 100%;
   top: 15%;
+}
+.ambassador_text .large-6 {
+  min-height: 230px;
 }
 .section-reports-filter {
   

@@ -31,6 +31,7 @@ base theme = zurb_foundation
 stylesheets[all][] = css/custom.css
 stylesheets[all][] = css/foundation.min.css
 stylesheets[all][] = css/app.css
+stylesheets[all][] = css/fonts/fonts.css
 scripts[] = js/scripts.js
 ;scripts[] = js/jquery.js
 scripts[] = js/backstretch.min.js

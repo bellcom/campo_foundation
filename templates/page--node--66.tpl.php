@@ -6,7 +6,7 @@
         <?php print $linked_logo; ?>
   <?php endif;*/ ?>
   <a title="" href="#">
-    <img alt="Logo" src="/sites/all/themes/campo_foundation/img/center_campo_kysten.svg">
+    <img alt="Logo" src="/sites/all/themes/campo_foundation/img/Center_Campo_kysten_RGB.png">
   </a>
 </div>
 <div class="large-12 small-4 columns show-for-small">

@@ -2,7 +2,7 @@
   display : none;
 }
 
-}
+
 .highlight {
   position : relative;
 }
@@ -490,7 +490,7 @@ Ambassadors
 #block-views-ambassadors-block-4,
 #block-views-ambassadors-block-5,
 #block-views-ambassadors-block-6,
-.section-ambassadors {width: 100%; line-height: 0px; *background: #dbd7cc; *padding-top: 100px; *padding-bottom: 80px; min-height: 400px; position: relative;}
+.section-ambassadors {width: 100%; line-height: 0px; *background: #dbd7cc; *padding-top: 100px; *padding-bottom: 80px; *min-height: 400px; position: relative;}
 #block-views-ambassadors-block-1 img,
 #block-views-ambassadors-block-2 img,
 #block-views-ambassadors-block-3 img,
@@ -992,7 +992,7 @@ background: #dbd7cc url(../img/cc-house-small.png) no-repeat right bottom;
 
   #subNavigation ul {list-style: none; float: none; margin: 0;}
   #subNavigation li { float: none; margin-left: 0; display: block; line-height: 20px; }
-  #subNavigation a {color: #000; ;  
+  #subNavigation a {color: #000;   
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
