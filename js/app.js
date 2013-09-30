@@ -302,7 +302,7 @@ $(document).ready(function(){
 	
 
 
-    $(".reportsList li").on('click','.reportListContent',function(){
+    $(".reportsList li").on('click','.reportListContent',function(e){
 
 		var listItem = $(this).parent("li"); 
 		var listContent = $(this).siblings().html();
@@ -313,7 +313,7 @@ $(document).ready(function(){
 			$("#report-viewer").slideUp();
 			//reportViewer.slideUp();
 			listItem.removeClass("active")
-			return false
+			return false;
     	}
 		
 		// When click on active listitem
@@ -325,14 +325,14 @@ $(document).ready(function(){
 				listItem.addClass("active");
 				$("#report-viewer").slideDown(500, function() {
 
-					var el = "#report-viewer";
-					var elWrapped = $(el);
-					scrollToDiv(elWrapped,0);
+			//		var el = "#report-viewer";
+			//		var elWrapped = $(el);
+			//		scrollToDiv(elWrapped,0);
 
 				});			
   			});
 			
-			return false	
+			return false;	
 			
     	}	
 				
@@ -349,11 +349,12 @@ $(document).ready(function(){
 		var offsetTop = offset.top;
 		var totalScroll = offsetTop -20;
 		
-		$('body,html').animate({
-				scrollTop: totalScroll
-		}, 500);
+		//$('body,html').animate({
+		//		scrollTop: totalScroll
+		//}, 500);
 				
-		return false;
+		e.preventDefault();
+                //return false;
 		
 	});
 	

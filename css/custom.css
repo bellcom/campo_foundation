@@ -1,3 +1,22 @@
+/* Change logo according to page body class. */
+.page-beretninger-hans-knudsens-plads .logo img,
+.taxonomy-hans-knudsens-plads .logo img {
+  content: url('/sites/all/themes/campo_foundation/img/Center_Campo_Hans_knudsen_RGB.png');
+} 
+.page-beretninger-bofaellesskaberne .logo img,
+.taxonomy-bofaellesskaberne-i-campo .logo img {
+  content: url('/sites/all/themes/campo_foundation/img/Center_Campo_bofaellesskaberne_RGB.png');
+}
+.page-beretninger-kysten .logo img,
+.taxonomy-kysten .logo img {
+  content: url('/sites/all/themes/campo_foundation/img/Center_Campo_kysten_RGB.png');
+}
+.page-beretninger-pallesvej .logo img,
+.taxonomy-pallesvej .logo img {
+  content: url('/sites/all/themes/campo_foundation/img/Center_Campo_pallesvej_RGB.png');
+}
+
+/* End of change logo */
 .views-field-field-file ul li {
   list-style: none;
   margin: 0;
@@ -8,6 +27,7 @@
   background-size: 100% 80%;
 }
 #navTop .right li.first a:hover,
+#navTop .right li.first a.active,
 #navTop .right li.first.expanded a:hover
 #navTop .right li.first.leaf a:hover {
   text-decoration: none;
@@ -70,7 +90,7 @@ p {
    -moz-hyphens: auto; hyphens: auto;
 
 }
-
+.page-beretninger-alle #filter-reports .row .large-3 p { display: none;}
 #navTop .dropdown li {
   display : none;
 
@@ -190,9 +210,10 @@ p {
     width : 100%;
 
   }
+  
   #overlay {
-
-     width : 88%;
+     display: block;
+     width : 78%;
   }
   #navTop {
     float: left;
@@ -214,11 +235,11 @@ p {
 }
 /*  breakpoint 768px table and PC desktop version */
 @media screen and (min-width: 48em){
-  /*#overlay {
+  #overlay {
 
-   width : 88%;
+   width : 700px;
   }
-.embedded-video iframe {
+/*.embedded-video iframe {
     width : 100%;
 
   }*/

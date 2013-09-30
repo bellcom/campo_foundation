@@ -66,7 +66,7 @@
 
   <?php if ($messages): print $messages; endif; ?>
   <?php if (!empty($page['help'])): print render($page['help']); endif; ?>
-  <div id="main" class="<?php print $main_grid; ?> columns">
+  <div id="main" class="<?php //print $main_grid; ?>">
      <?php if (!empty($tabs)): ?>
       <?php print render($tabs); ?>
       <?php if (!empty($tabs2)): print render($tabs2); endif; ?>

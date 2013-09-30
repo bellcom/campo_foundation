@@ -172,7 +172,7 @@ Left side menu
 .sideWrapper {width: 100%; top: -150px; position: absolute; z-index: 300; }
 
 .sideMenuHolder {margin: 0 14% 0 0;  padding: 20px 20px 30px 20px; }
-.sideMenuHolder h3 {color: #fff; font-size: 1em;}
+.sideMenuHolder h3 {color: #fff; font-size: 1em; font-weight: bold;}
 
 
 .side-nav {margin-top: 100px;}
@@ -185,8 +185,8 @@ Left side menu
   transition: all 0.2s linear;
 }
 
-.side-nav li a:hover {color: #004065;}
-.side-nav li a.active {color: #004065;}
+#block-menu-block-2 .menu-block-2 .side-nav li a:hover {color: #004065;}
+#block-menu-block-2 .menu-block-2 .side-nav li a.active {color: #004065;}
 
 
 
@@ -282,7 +282,8 @@ Navigation
   }
 #navTop a:hover {color: #7a9a01;}
 
-
+#navTop li.active-trail a,
+#navTop a.active { color:#7a9a01; }
 .section-subNavigation {background: rgb(236,236,236);}
 
 #subNavigation {margin: 0;}  
@@ -291,7 +292,9 @@ Navigation
 #subNavigation a {color: #000; text-transform: uppercase; font-size: 12px;  
   -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear;
   }
-#subNavigation a:hover {color: #004065;}
+#subNavigation a.active-trail,
+#subNavigation a.active,
+#subNavigation a:hover {color: #004065; font-weight:bold;}
 
 
 /*
@@ -456,8 +459,8 @@ display: block;
 margin: 0 auto;
 }
 
-.section-video {width: 100%; padding-top: 55px; padding-bottom: 55px;}
-#vision h2, .section-video h2 {color: #fff; font-size: 1.8em;} 
+.section-video {width: 100%; *padding-top: 55px; *padding-bottom: 55px;}
+#vision h2, #pictures h2 {color: #fff; font-size: 1.8em;} 
 
 
 /*
@@ -518,7 +521,7 @@ Ambassadors
 .shadowBeige {width: 100%;height: 50px;	background:#dbd7cc;	box-shadow: inset 0 50px 50px -50px #999999;}
 
 .ambassadorHolder { position: absolute; width: 100%; top: 20px;}
-.ambassadorContent {background: #fff; margin-top: 30px; padding-top: 20px;}
+.ambassadorContent { background: rgba(255,255,255,0.75); margin-top: 30px; padding-top: 20px;}
 
 
 /*
@@ -541,7 +544,7 @@ Ambassadors
 
 
 .section-reports-filter {width: 100%; background: #fff; padding-top: 20px; padding-bottom: 10px;}
-.section-reports {width: 100%; background: #dbd7cc; padding-top: 25px; padding-bottom: 20px;}
+section.section-reports {width: 100%; background: #dbd7cc; padding-top: 25px; padding-bottom: 20px;}
 
 
 #filter {margin-bottom: 0; margin-top: 10px;}
@@ -549,11 +552,12 @@ Ambassadors
 #filter li a {color: rgb(51,98,125);  color: #000;}
 #filter li.current a {color: rgb(51,98,125);}
 
-.reportsList li .reportListContent {background: #fff; padding: 1.25em; cursor: pointer; }
+.reportsList li .reportListContent {background: #fff; padding: 1.25em; cursor: pointer; min-height: 235px; position:relative;}
 
-.reportListContent p {margin-bottom: 0; font-size: 0.7em;}
+.reportListContent p {margin-bottom: 0; font-size: 0.7em; padding-right: 15px !important;}
 
-.arrow {float: right; margin-top: -16px; width: 16px; height: 16px; background: url(../img/arrow_circle_small_green_right.png) no-repeat 0 0;}
+.arrow {position: absolute; right: 15px; bottom: 15px; margin-top: -16px; width: 16px; height: 16px; background: url(../img/arrow_circle_small_green_right.png) no-repeat 0 0;}
+
 .active .arrow {background: url(../img/arrow_circle_small_green_down.png) no-repeat 0 0;}
 
 .reportsList li.active .reportListContent {background: #cdc9bf;}
@@ -921,9 +925,10 @@ background: #dbd7cc url(../img/cc-house-small.png) no-repeat right bottom;
   #vision-video {padding: 0;}
   #vision-video .videoIcon {text-align: center; position: absolute; top: 35%; left: 0; width: 100%; }  
   #vision-video .videoIcon img {width: 20%;}
+  .overlay-open .section-video { min-height: 400px;}
 
-  .section-video {width: 100%; padding-top:0; padding-bottom: 10px;}
-  #vision h2,.section-video h2 {color: #004065; font-size: 1.2em; padding-top: 10px;} 
+  .section-video {width: 100%; padding-top:0; padding-bottom: 10px; }
+  #vision h2,#pictures h2,.section-video h2 {color: #004065; font-size: 1.2em; padding-top: 10px;} 
 
 
 

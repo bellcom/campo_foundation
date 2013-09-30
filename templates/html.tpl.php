@@ -44,9 +44,10 @@
 <!DOCTYPE html>
 <!-- Sorry no IE7 support! -->
 <!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
-
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <!--[if IE 8]>
+     <html class="no-js lt-ie9" lang="da"> 
+  <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
 
 <head>
   <?php print $head; ?>
@@ -54,20 +55,13 @@
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
      <script src="/sites/all/themes/campo_foundation/js/vendor/custom.modernizr.js"></script>
-
  
   <?php print $scripts; ?>
    <script src="/sites/all/libraries/flexslider/jquery.flexslider-min.js"></script>
- 
-
- <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
   <!-- @todo convert fallback into head alter function -->
   <!-- Check for Zepto support, load jQuery if necessary -->
 </head>
-<body <?php /*class="<?php print $classes; ?>"*/?> <?php print $attributes;?>>
+<body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div class="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
@@ -79,6 +73,11 @@
       $(document).foundation();
     })(jQuery, Drupal, this, this.document);
   </script> -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" type="text/css" href="/sites/all/themes/campo_foundation/css/ie8.css" /> 
+    <link rel="stylesheet" type="text/css" href="http://webkreation.dk/centercampo/testie8.css" />
+  <![endif]-->
 
 </body>
 </html>

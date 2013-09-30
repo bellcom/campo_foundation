@@ -5,6 +5,17 @@
  * Outputs Foundation Nav bar http://foundation.zurb.com/docs/navigation.php
  * 
  */
+
+function campo_foundation_menu_tree__menu_block__2($variables) {
+  return '<ul class="side-nav">'.$variables['tree']."</ul>";
+}
+function campo_foundation_menu_tree__menu_block__3($variables) {
+  return '<ul class="side-nav">'.$variables['tree']."</ul>";
+}
+function campo_foundation_menu_tree__menu_block__5($variables) {
+  return '<ul class="side-nav">'.$variables['tree']."</ul>";
+}
+
 //function STARTER_links__system_main_menu($variables) {
 //  // Get all the main menu links
 //  $menu_links = menu_tree_output(menu_tree_all_data('main-menu'));
@@ -43,29 +54,60 @@
 iii * Implements template_preprocess_html().
  * 
  */
-//function STARTER_preprocess_html(&$variables) {
+function campo_foundation_preprocess_html(&$variables) {
 //  // Add conditional CSS for IE. To use uncomment below and add IE css file
 //  drupal_add_css(path_to_theme() . '/css/ie.css', array('weight' => CSS_THEME, 'browsers' => array('!IE' => FALSE), 'preprocess' => FALSE));
 //  
 //  // Need legacy support for IE downgrade to Foundation 2 or use JS file below
 //  // drupal_add_js('http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js', 'external'); 
-//}
+
+  // Add body class according to taxonomy item.
+  if(arg(0)=='node' && is_numeric(arg(1))) {
+        $node = node_load(arg(1)); 
+        $results = taxonomy_node_get_terms($node);
+        if(is_array($results)) {
+            foreach ($results as $item) {
+               $variables['classes_array'][] = "taxonomy-".strtolower(drupal_clean_css_identifier($item->name));
+            }
+       }
+   }  
+
+}
+function taxonomy_node_get_terms($node, $key = 'tid') {
+    static $terms;
+
+    if (!isset($terms[$node->vid][$key])) {
+        $query = db_select('taxonomy_index', 'r');
+        $t_alias = $query->join('taxonomy_term_data', 't', 'r.tid = t.tid');
+        $v_alias = $query->join('taxonomy_vocabulary', 'v', 't.vid = v.vid');
+        $query->fields( $t_alias );
+        $query->condition("r.nid", $node->nid);
+        $result = $query->execute();
+        $terms[$node->vid][$key] = array();
+        foreach ($result as $term) {
+            $terms[$node->vid][$key][$term->$key] = $term;
+        }
+    }
+    return $terms[$node->vid][$key];
+}
 
 /**
  * Implements template_preprocess_page
  *
  */
 function campo_foundation_preprocess_page(&$variables) {
+  // the 4 botilbud page. node type is center. 
   if (!empty($variables['node']) && $variables['node']->type == 'center') {
-    if ($variables['node']->nid == 6 || $variables['node']->nid == 7 || $variables['node']->nid == 67 || $variables['node']->nid == 66 || $variables['node']->nid == 69 ||  $variables['node']->nid == 119) {
+    if ($variables['node']->nid == 6 || $variables['node']->nid == 7 || $variables['node']->nid == 67 || $variables['node']->nid == 66 || $variables['node']->nid == 69) {
       $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->nid;
     } 
     else {
       $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
     }
   }
+  // the node-type: page, aka - afdelinger underside, there are 2 special page-pages: botilbud, center campo forside(nid = 119).
   if (!empty($variables['node']) && $variables['node']->type == 'page' &&  $variables['node']->title != 'Botilbud') {
-    if ($variables['node']->title == 'Center Campo Forside') {
+    if ($variables['node']->nid == 119) {
       $variables['theme_hook_suggestions'][] = 'page__node__centercampo';
     }
     else {
@@ -82,8 +124,15 @@ function campo_foundation_preprocess_page(&$variables) {
     $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
   }
   if (!empty($variables['node']) && $variables['node']->type == 'underside') {
-    $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
+    if ($variables['node']->nid == 160) {
+      $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->nid;
+    }
+    else {
+      $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
+    }
   }
+
+
 
 }
 
@@ -97,7 +146,8 @@ function campo_foundation_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_block()
  */
-//function STARTER_preprocess_block(&$variables) {
+function campo_foundation_preprocess_block(&$variables) {
+
 //  // Add wrapping div with global class to all block content sections.
 //  $variables['content_attributes_array']['class'][] = 'block-content';
 //  
@@ -127,7 +177,7 @@ function campo_foundation_preprocess_page(&$variables) {
 //      // Set grid column or mobile classes or anything else you want.
 //      $variables['classes_array'][] = 'six columns';
 //      break;
-//  }
+   // }
 //
 //  // Add template suggestions for blocks from specific modules.
 //  switch($variables['elements']['#block']->module) {
@@ -135,7 +185,7 @@ function campo_foundation_preprocess_page(&$variables) {
 //      $variables['theme_hook_suggestions'][] = 'block__nav';
 //    break;
 //  }
-//}
+}
 
 //function STARTER_preprocess_views_view(&$variables) {
 //}

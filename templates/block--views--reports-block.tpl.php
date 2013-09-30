@@ -51,16 +51,21 @@
   <?php if ($block->subject): ?>
   <span class="sectionShadow"></span>
      <div class="row">
-      <div class="large-5 columns">
+      <div class="large-8 columns">
         <h2<?php print $title_attributes; ?>><?php print $block->subject; ?></h2>
       </div>
+      <div class="large-3 columns">
+
+        <p style="padding-top: 13px;  margin-bottom: 0;" class="right"><a href="/beretninger/alle">Se flere beretninger</a></p>
+
+       </div>
      </div>
   <?php endif;?>
   <?php print render($title_suffix); ?>
 </section>
 <section class="section-reports">
   <?php print $content ?>
-</section> <!-- /.block -->
+</section> <!-- /view report.block -->
 <?php /*if ($block->delta != 'main'):  ?>  
   <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <?php endif; ?>    

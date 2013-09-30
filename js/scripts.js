@@ -1,3 +1,4 @@
+jQuery.noConflict();
 (function($) {
 Drupal.behaviors.campo_foundation = {
     attach: function(context) {
@@ -15,8 +16,35 @@ Drupal.behaviors.campo_foundation = {
 	
        $(document).ready(function(){
            var gridSize = getGridSize();
+           // Change page logo and there links according to body class.
+           $(".page-beretninger-hans-knudsens-plads .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_Hans_knudsen_RGB.png");           
+           $(".taxonomy-hans-knudsens-plads .logo a").attr("href", "/botilbud/hans-knudsens-plads");
+           $(".taxonomy-hans-knudsens-plads .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_Hans_knudsen_RGB.png");
+$(".page-beretninger-bofaellesskaberne .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_bofaellesskaberne_RGB.png");
+           $(".taxonomy-bofaellesskaberne-i-campo .logo a").attr("href", "/botilbud/bofællesskaberne-i-campo");
+           $(".taxonomy-bofaellesskaberne-i-campo .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_bofaellesskaberne_RGB.png");
+           $(".taxonomy-pallesvej .logo a").attr("href", "/botilbud/pallesvej");
+           $(".taxonomy-pallesvej .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_pallesvej_RGB.png");
+           $(".page-beretninger-pallesvej .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_pallesvej_RGB.png");
            
+           $(".taxonomy-kysten .logo a").attr("href", "/botilbud/kysten");
+           $(".taxonomy-kysten .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_kysten_RGB.png");
+           $(".page-beretninger-kysten .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_kysten_RGB.png");
+           $(".page-beretninger-hans-knudsens-plads .logo a").attr("href", "/botilbud/hans-knudsens-plads");
+           $(".page-beretninger-bofaellesskaberne .logo a").attr("href", "/botilbud/bofællesskaberne-i-campo");
+           $(".page-beretninger-pallesvej .logo a").attr("href", "/botilbud/pallesvej");
+           $(".page-beretninger-kysten .logo a").attr("href", "/botilbud/kysten");
 
+           // replace '-' to space in the sideMenu. 
+            var str = "<h3>"+ $(".sideMenuHolder h2").text().replace('-',' ')+"</h3>";
+                str = str.replace('-',' ');
+                str = str.replace('-',' ');
+           // var str2 = "<h3>"+ $(".sideMenuHolder.blueGradient h2").text()+"</h3>"
+
+            $(".sideMenuHolder h2").replaceWith(str);
+           // $(".sideMenuHolder.blueGradient h2").replaceWith("<h3>"+ $(".sideMenuHolder.blueGradient h2").text()+"</h3>");
+          // open pdf file in a new window.
+           $(".views-field-field-file .file a").attr({target: "_blank"});
        });
         function getGridSize() {
 		return (window.innerWidth < 600) ? 2 :
@@ -36,6 +64,7 @@ Drupal.behaviors.campo_foundation = {
 
      function scrollToDiv(element,navheight){
                 var offset = element.offset();
+               // var offset = document.getElementById(element).offsetTop;
                 var offsetTop = offset.top;
                 var totalScroll = offsetTop-navheight;
 
