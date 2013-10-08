@@ -82,5 +82,5 @@
 
   <?php print $content ?>
   
-</div> <!-- /.block -->
+</div> <!-- /alm.block -->
 

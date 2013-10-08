@@ -37,13 +37,13 @@ article h1 {color: #000; margin-bottom: 24px;}
 
 aside {margin-bottom: 4em; }
 aside h4 {font-size: 1.2em; color: #000; margin-bottom: 30px; margin-top: 8px;}
-aside h3 {font-size: 1em; color: #000; margin-bottom: 10px;}
+aside h2,aside h3 {font-size: 1.1em; color: #000; margin-bottom: 10px;}
 
 aside a {color: #e37c00;}
 aside a:hover {color: #e37c00;}
 
 aside img.left {padding: 0 15px 15px 0;}
-
+.aside-link a {font-size: 0.9em;}
 .ccAccordion {margin-bottom: 1.25em;}
 
 .ccAccordion .title {margin: 0; }
