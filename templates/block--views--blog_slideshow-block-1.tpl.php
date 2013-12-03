@@ -51,21 +51,4 @@
       <?php print $content ?>
      </div>
   <?php print render($title_suffix); ?>
-<!--  <div id="slider-swoosh">
-    <img src="sites/all/themes/campo_foundation/img/swoosh.png" alt="" />
-  </div>
-
-  <div id="slider-topbox">
-    <div class="row">
-      <div class="large-12 columns blueGradient gradient">
-        <div class="row slider-topbox-content">
-          <div class="large-8 columns "></div>
-          <div class="large-4 columns">
-            <p>block--views--blog_slideshow-block.tpl.php: Qui niendi saperit velis dit odite illam volupit, coreperum volupta si nimi, sit aliquias rate eum volupiciam,´ecuus necus provit es dolor simagnim esed que poremquo bea qui otet fugiandu. </p>  
-	    <p><a href="#" title="">Se mere om muligheder i CenterCampo</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>--> 
-</div> <!-- /.block -->
+</div> <!-- /block-views-blog-slideshow-block -->

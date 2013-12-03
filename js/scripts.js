@@ -36,9 +36,10 @@ $(".page-beretninger-bofaellesskaberne .logo img").attr("src", "/sites/all/theme
            $(".page-beretninger-kysten .logo a").attr("href", "/botilbud/kysten");
 
            // replace '-' to space in the sideMenu. 
-            var str = "<h3>"+ $(".sideMenuHolder h2").text().replace('-',' ')+"</h3>";
-                str = str.replace('-',' ');
-                str = str.replace('-',' ');
+            var str = "<h3>"+ $(".sideMenuHolder h2").text().replace('_',' ')+"</h3>";
+                str = str.replace('_',' ');
+                str = str.replace('_',' ');
+                str = str.replace('_',' ');
            // var str2 = "<h3>"+ $(".sideMenuHolder.blueGradient h2").text()+"</h3>"
 
             $(".sideMenuHolder h2").replaceWith(str);

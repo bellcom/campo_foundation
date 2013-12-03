@@ -44,10 +44,10 @@
 <!DOCTYPE html>
 <!-- Sorry no IE7 support! -->
 <!-- @see http://foundation.zurb.com/docs/index.html#basicHTMLMarkup -->
-  <!--[if IE 8]>
-     <html class="no-js lt-ie9" lang="da"> 
-  <![endif]-->
-  <!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="da"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="da"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="da"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
 
 <head>
   <?php print $head; ?>
@@ -74,9 +74,16 @@
     })(jQuery, Drupal, this, this.document);
   </script> -->
   <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <link rel="stylesheet" type="text/css" href="/sites/all/themes/campo_foundation/css/ie8.css" /> 
+     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/sites/all/themes/campo_foundation/css/ie8.css" />
     <link rel="stylesheet" type="text/css" href="http://webkreation.dk/centercampo/testie8.css" />
+  <![endif]-->
+
+  <!--[if lt IE 8]>
+    <link rel="stylesheet" type="text/css" href="http://webkreation.dk/centercampo/testie7.css" />   
   <![endif]-->
 
 </body>
