@@ -12,11 +12,11 @@
 $(document).foundation();
 $(document).ready(function(){
 
-if (document.documentElement.clientWidth >= 768) {
-	
-  // ---------- Backstretch ----------
-/*  $("#vision").backstretch("/sites/default/files/video_ulla_1200x650_0.jpg");*/
-//  $("#ambassadors").backstretch("/sites/all/themes/campo_foundation/img/content/citat-frit_1200x600_1.jpg");
+	if (document.documentElement.clientWidth >= 768) {
+		
+	  // ---------- Backstretch ----------
+	/*  $("#vision").backstretch("/sites/default/files/video_ulla_1200x650_0.jpg");*/
+	//  $("#ambassadors").backstretch("/sites/all/themes/campo_foundation/img/content/citat-frit_1200x600_1.jpg");
 
 		}
 
@@ -38,20 +38,14 @@ $('#accordion').foundation('section', {
 
 $(document).ready(function(){	
 
-
 	// ---------- Flexslider ----------
-
-	
-
 	$('#topSlider').flexslider({
 		controlNav: false,
 		prevText: "Forrige",
 		nextText: "Næste"
 	});	
 
-	
-
-	if (document.documentElement.clientWidth >= 768) {
+	if (document.documentElement.clientWidth >= 767) {
 
 		$('#featured').flexslider({
 			controlNav: false,
@@ -61,12 +55,10 @@ $(document).ready(function(){
 				$('#flexslider-2').flexslider("next")
                         }*/
                         asNavFor: '#featured-text'
-
-
 		});	
 
 		$('#featured-text').flexslider({
-                        sync:"#featured",
+            sync:"#featured",
 			touch: false,
 			controlNav: false,
 			directionNav: false
@@ -90,7 +82,6 @@ $(document).ready(function(){
 	$("#menuIcon").on("click", function(e){
 		$(this).toggleClass("active");
 		$("#navTop").slideToggle();
-		$("#subNavigation").slideToggle();
 		e.preventDefault();
 	});	
 
@@ -136,10 +127,20 @@ $(document).ready(function(){
 		//$(this).closest('li').toggleClass('active').find('.content').not(':animated').slideToggle();
                 var $content = $(this).closest('li');                                
                 if($content.find('.content').is(":visible")){
+					if($("html").hasClass('lt-ie8')){
+					 $content.toggleClass('active').find('.content').hide();	
+						} else {
                      $content.toggleClass('active').find('.content').slideUp("slow");
+					}
                 } else {
+					if($("html").hasClass('lt-ie8')){
+						
+					 $content.siblings().removeClass('active').find('.content').hide();
+                     $content.toggleClass('active').find('.content').show();	
+						} else {
                      $content.siblings().removeClass('active').find('.content').slideUp("slow");
                      $content.toggleClass('active').find('.content').slideToggle("slow");
+					}
                }          
 	});
 
@@ -177,71 +178,6 @@ $(document).ready(function(){
 			slideshow: false,
 			sync: "#pictures-carousel"
 		});
-
-
-
-
-	// ---------- More / less button ----------
-
-/*	$("#showAmbassadors-morebutton").on("click", function(e){
-
-
-		var $window = $(window), flexslider;
-
-		function getGridSize() {
-			return (window.innerWidth < 600) ? 2 :
-				   (window.innerWidth < 900) ? 3 : 4;
-		}
-
-		// check grid size on resize event
-
-		$(window).on('resize', function() {
-
-			var gridSize = getGridSize();
-
-		/*	flexslider.vars.minItems = gridSize;
-			flexslider.vars.maxItems = gridSize;
-			
-		});
-
-
-		$('#flexslider-7').flexslider({
-			animation: "slide",
-			controlNav: false,
-			animationLoop: false,
-			slideshow: false,
-			itemWidth: 210,
-			itemMargin: 5,
-			minItems: getGridSize(), 
-			maxItems: getGridSize(), 
-			asNavFor: '#flexslider-6'
-		});
-
-		$('#flexslider-6').flexslider({
-			animation: "fade",
-			controlNav: false,
-			directionNav: false,
-			animationLoop: false,
-			slideshow: false,
-			sync: "#flexslider-7"
-		});
-
-
-
-	    $("#hiddenAmbassadors").slideDown(
-	    	function(){
-				var el = "#hiddenAmbassadors";
-				var elWrapped = $(el);
-				scrollToDiv(elWrapped,0);
-	    	}	
-	    );
-
-	    $(this).hide();
-	    $("#showAmbassadors-lessbutton").show(); 
-
-	    e.preventDefault();
-	});*/	
-
 
 	$("#showAmbassadors-lessbutton").on("click", function(e){
 	    $("#hiddenAmbassadors").slideUp();
@@ -364,8 +300,12 @@ $(document).ready(function(){
 		return false;
 	});
 	
+	
 
 });
+
+
+
 
 
 // ---------- Functions ----------

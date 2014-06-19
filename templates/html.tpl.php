@@ -54,12 +54,24 @@
   
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
-     <script src="/sites/all/themes/campo_foundation/js/vendor/custom.modernizr.js"></script>
+  <script src="/sites/all/themes/campo_foundation/js/vendor/custom.modernizr.js"></script>
  
   <?php print $scripts; ?>
-   <script src="/sites/all/libraries/flexslider/jquery.flexslider-min.js"></script>
-  <!-- @todo convert fallback into head alter function -->
-  <!-- Check for Zepto support, load jQuery if necessary -->
+  <script src="/sites/all/libraries/flexslider/jquery.flexslider-min.js"></script>
+  <link rel="icon" href="/sites/all/themes/campo_foundation/img/favicon.png" type="image/png" />
+
+  <!--[if lt IE 9]>
+     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/sites/all/themes/campo_foundation/css/ie8.css" />
+  <![endif]-->
+
+  <!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="/sites/all/themes/campo_foundation/css/ie7.css" />  
+  <![endif]-->
+
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div class="skip-link">
@@ -73,18 +85,7 @@
       $(document).foundation();
     })(jQuery, Drupal, this, this.document);
   </script> -->
-  <!--[if lt IE 9]>
-     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
 
-  <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/sites/all/themes/campo_foundation/css/ie8.css" />
-    <link rel="stylesheet" type="text/css" href="http://webkreation.dk/centercampo/testie8.css" />
-  <![endif]-->
-
-  <!--[if lt IE 8]>
-    <link rel="stylesheet" type="text/css" href="http://webkreation.dk/centercampo/testie7.css" />   
-  <![endif]-->
 
 </body>
 </html>

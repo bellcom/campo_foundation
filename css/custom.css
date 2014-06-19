@@ -179,8 +179,10 @@ p {
   margin-top : 10px;
 }
 
-/* breakpoint 768px, mobile landscape */
-@media screen and (max-width: 48em) { 
+/* breakpoint 768px, mobile landscape 
+@media screen and (max-width: 48em) {*/
+	
+@media screen and (max-width: 767px) { 	 
   .view-video-list-p-videounderside .video_playIcon img {
     max-width: 20%;
   }
