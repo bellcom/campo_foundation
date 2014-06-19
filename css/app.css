@@ -29,9 +29,8 @@ Article & aside styles
 
 */
 
-article { padding-bottom: 100px;}
+article { padding-bottom: 100px; min-height: 400px; }
 article h1 {color: #000; margin-bottom: 24px;}
-
 
 
 
@@ -172,8 +171,9 @@ Left side menu
 .sideWrapper {width: 100%; top: -150px; position: absolute; z-index: 300; }
 
 .sideMenuHolder {margin: 0 14% 0 0;  padding: 20px 20px 30px 20px; }
-.sideMenuHolder h3 {color: #fff; font-size: 1em; font-weight: bold;}
+.sideMenuHolder h3 {color: #fff; font-size: 1em;}
 
+.side-nav li.active a {font-weight: normal;	}
 
 .side-nav {margin-top: 100px;}
 
@@ -294,7 +294,7 @@ Navigation
   }
 #subNavigation a.active-trail,
 #subNavigation a.active,
-#subNavigation a:hover {color: #004065; font-weight:bold;}
+#subNavigation a:hover {color: #004065; }
 
 
 /*
@@ -357,12 +357,8 @@ section {position: relative;}
 
 /* Sections - backgrounds  */
 
-
 .section-shortcuts {width: 100%; background: #dbd7cc; padding-top: 80px; padding-bottom: 20px;}
-
 .shortcuts-wrapper {max-width: 1250px; margin: 0 auto; padding: 0 15px; background-color: #dbd7cc;}
-
-
 .shortcuts li div {position: relative; overflow: hidden; text-transform: uppercase; }
 .shortcuts li div img {width: 100%;}
 .shortcuts span {
@@ -376,6 +372,8 @@ section {position: relative;}
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
   font-size: 0.8em;
   line-height: 1.2em;
+  text-align:left;
+  cursor: pointer;
 }
 .shortcuts.blue span { background: rgb(51,98,125); background: rgba(51,98,125,0.8);}
 .shortcuts.green span { background: rgb(122,154,1); background: rgba(122,154,1,0.8);}
@@ -552,7 +550,7 @@ section.section-reports {width: 100%; background: #dbd7cc; padding-top: 25px; pa
 #filter li a {color: rgb(51,98,125);  color: #000;}
 #filter li.current a {color: rgb(51,98,125);}
 
-.reportsList li .reportListContent {background: #fff; padding: 1.25em; cursor: pointer; min-height: 235px; position:relative;}
+.reportsList li .reportListContent {background: #fff; padding: 1.25em; cursor: pointer; min-height: 255px; position:relative;}
 
 .reportListContent p {margin-bottom: 0; font-size: 0.7em; padding-right: 15px !important;}
 
@@ -801,34 +799,9 @@ Slider-swoosh
 
 /* ------------- Media Q  ------------- */
 
-@media screen and (min-width: 768px) and (max-width: 999px) {
 
-  #featured {overflow: hidden; height: 400px;}
-  #topSlider {height: 400px; overflow: hidden;}
 
-  #featured.subpage,  #topSlider.subpage {height: 250px;}
-
-  #featured .flex-direction-nav a {
-  top: 30%;
-  }
- 
-  #navTopContainer {padding: 0;}
-
-  #navTop li {
-    margin-left: 0.7em;
-  }
-  #navTop a {
-    font-size: 0.7em;
-  }
-
-  #subNavigation a {
-    font-size: 10px;
-
-  } 
-
-}
-
-@media screen and (max-width: 48em) {
+@media screen and (max-width: 767px) {
 
 
   /*
@@ -855,19 +828,7 @@ Slider-swoosh
   #slider-topbox {position: relative; width: 100%; bottom: auto; z-index: auto;}
   #slider-swoosh {display: none;}
 
-
-
-
-  /*
-
-  Mediaqueries
-
-  */
-
-
-
   .backstretch img {display: none;}
-
 
   /*
 
@@ -982,28 +943,39 @@ background: #dbd7cc url(../img/cc-house-small.png) no-repeat right bottom;
   Navigation
   */
 
-  #navTop ul {list-style: none; float: none; margin: 0;}
-  #navTop li { float: none; margin-left: 0; display: block; line-height: 20px; }
+  #navTop {float: none !important; display: none;}
+
+  #navTop ul {list-style: none; float: none !important; margin: 0;}
+  #navTop li { float: none; margin-left: 0; display: block; line-height: 20px; border-bottom: 1px solid #eee; }
   #navTop a {color: #000;   
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
-
-
-
+	display: block;
+	padding: 8px 0;
     } 
 
+	/* Level 2 */
 
-  #subNavigation ul {list-style: none; float: none; margin: 0;}
-  #subNavigation li { float: none; margin-left: 0; display: block; line-height: 20px; }
-  #subNavigation a {color: #000;   
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+	#navTop .active-trail.has-dropdown .dropdown {
+		display: block !important;
+	}
+	
+	#navTop .active-trail.has-dropdown .dropdown li {
+		display: block;	
+		margin-left: 20px;
+	}
+	
+	#navTop .active-trail.has-dropdown .dropdown li:first-child {display: none;}
+	#navTop .active-trail.has-dropdown .dropdown li:last-child {border-bottom: none;}
+	
+	#navTop .active-trail.has-dropdown .dropdown li a {color: #000;}
+	#navTop .active-trail.has-dropdown .dropdown li a.active {color: #7a9a01;}
+	
 
-    } 
+  #subNavigation {display: none;}
+ 
 
 
 
@@ -1017,5 +989,28 @@ background: #dbd7cc url(../img/cc-house-small.png) no-repeat right bottom;
   .leftside {padding: 0 !important;}
   .sideWrapper {position: relative; top: auto; margin: 0;}
   .sideMenuHolder {margin:0; padding: 0.9375em;}
+
+}
+
+
+/* Tablet */
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+
+  #topSlider {height: 400px; overflow: hidden;}
+
+  #slider-topbox {bottom: -50px;}
+
+  #featured {overflow: hidden; height: 400px; }
+  #featured.subpage,  #topSlider.subpage {height: 400px;}
+  #featured .flex-direction-nav a {top: 20%;}
+  #featured.subpage .flex-direction-nav a {top: 30%;}
+  
+  
+  #navTopContainer {padding: 0;}
+  #navTop li {margin-left: 0.7em;}
+  #navTop a {font-size: 0.7em;}
+
+  #subNavigation a {font-size: 10px;} 
 
 }
