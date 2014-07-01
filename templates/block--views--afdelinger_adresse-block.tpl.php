@@ -62,13 +62,13 @@
   <div class="mapDetails greenGradient">
     <div class="row">
       <div class="large-3 small-12 columns">
-        <p class="map-shopping">Afstand til indkø: <?php print $shopping_s ; ?></p>
+        <p class="map-shopping">Afstand til indk&oslash;b: <?php print $shopping_s ; ?></p>
       </div>
       <div class="large-3 small-12 columns">
         <p class="map-transportation">Afstand til off. transport: <?php print $transport_s; ?></p>
       </div>
       <div class="large-6 small-12 columns">
-         <p class="map-tree">Afstand til grønne områd: <?php print $green_s;  ?></p>
+         <p class="map-tree">Afstand til grønne omr&aring;der: <?php print $green_s;  ?></p>
       </div>
     </div>
    </div>
