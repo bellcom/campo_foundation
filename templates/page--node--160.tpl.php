@@ -57,10 +57,6 @@
         <?php print render($page['highlighted']); ?>
       </div>
     <?php endif; ?>
-    <?php if (!empty($tabs)): ?>
-      <?php print render($tabs); ?>
-      <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
-    <?php endif; ?>
 
     <?php if ($action_links): ?>
       <ul class="action-links">
@@ -77,6 +73,10 @@
              <div class='large-12 columns'> ";
                 if ($breadcrumb)
                 print $breadcrumb;
+                if (!empty($tabs)) {
+                  print render($tabs);
+                  if (!empty($tabs2))  print render($tabs2);
+                }
              print "
              </div>";
              print "<article class='large-8 columns'>

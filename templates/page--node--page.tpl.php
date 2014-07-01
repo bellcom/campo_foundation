@@ -58,16 +58,12 @@
         <?php print render($page['highlighted']); ?>
       </div>
     <?php endif; ?>
-    <?php if (!empty($tabs)): ?>
-      <?php print render($tabs); ?>
-      <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
-    <?php endif; ?>
 
-    <?php if ($action_links): ?>
+    <?php/* if ($action_links): ?>
       <ul class="action-links">
         <?php print render($action_links); ?>
       </ul>
-    <?php endif; ?>
+    <?php endif; */?>
 
     <a id="main-content"></a>
 
@@ -79,6 +75,10 @@
                 <?php print $breadcrumb;?>
                 <?php endif; ?>
              </div>
+             <?php if (!empty($tabs)): ?>
+                <?php print render($tabs); ?>
+                <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
+             <?php endif; ?>
              <article class="large-8 columns">
                <h1><?php print $title; ?></h1>
                 <?php if (!empty($page['content_pre'])): ?>

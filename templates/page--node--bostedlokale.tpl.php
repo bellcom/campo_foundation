@@ -41,15 +41,6 @@
 
 <div class="row">
   <div class="<?php $site_slogan ? print 'large-6' : print 'small-4 large-4 columns large-offset-8'; ?> columns hide-for-small">
-      <?php /* if ($logged_in): ?>
-      <ul class="inline-list right">
-        <li><?php print l(t('My Account'), 'user'); ?></li>
-        <li><?php print l(t('Logout'), 'user/logout'); ?></li>
-      </ul>
-      <?php else:*/ ?>
-        <?php /* print l(t('Login'), 'user/login', array('attributes' => array('class' => array('large', 'radius', 'button')))); ?>
-        <?php print l(t('Sign Up'), 'user/register', array('attributes' => array('class' => array('large', 'radius', 'success', 'button')))); ?>
-      <?php endif; */ ?>
   </div>
   <?php if ($site_slogan): ?>
     <div class="large-12 columns hide-for-small">
@@ -65,10 +56,6 @@
       <div class="highlight" style="position: relative">
         <?php print render($page['highlighted']); ?>
       </div>
-    <?php endif; ?>
-    <?php if (!empty($tabs)): ?>
-      <?php print render($tabs); ?>
-      <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
     <?php endif; ?>
 
     <?php if ($action_links): ?>
@@ -86,6 +73,10 @@
              <div class='large-12 columns'> ";
                 if ($breadcrumb)
                 print $breadcrumb;
+                if (!empty($tabs)) {
+                  print render($tabs);
+                  if (!empty($tabs2))  print render($tabs2);
+                }
              print "
              </div>
              <article class='large-8 columns'>
