@@ -725,7 +725,7 @@ Slider-swoosh
 #slider-swoosh img {width: 100%;}
 
 #slider-topbox {position: absolute; width: 100%; bottom: -5px; z-index: 80;}
-#slider-topbox .row {max-width: 970px;}
+#slider-topbox .row {max-width: 970px; height: 200px;}
 .slider-topbox-content {padding: 25px;}
 
 .slider-topbox-content a {color: #fff; position: relative; display: inline-block;}
