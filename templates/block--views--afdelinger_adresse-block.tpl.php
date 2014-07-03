@@ -3,39 +3,6 @@
 /**
  * @file
  * Default theme implementation to display a block.
- *
- * Available variables:
- * - $block->subject: Block title.
- * - $content: Block content.
- * - $block->module: Module that generated the block.
- * - $block->delta: An ID for the block, unique within each module.
- * - $block->region: The block region embedding the current block.
- * - $classes: String of classes that can be used to style contextually through
- *   CSS. It can be manipulated through the variable $classes_array from
- *   preprocess functions. The default values can be one or more of the following:
- *   - block: The current template type, i.e., "theming hook".
- *   - block-[module]: The module generating the block. For example, the user module
- *     is responsible for handling the default user navigation block. In that case
- *     the class would be "block-user".
- * - $title_prefix (array): An array containing additional output populated by
- *   modules, intended to be displayed in front of the main title tag that
- *   appears in the template.
- * - $title_suffix (array): An array containing additional output populated by
- *   modules, intended to be displayed after the main title tag that appears in
- *   the template.
- *
- * Helper variables:
- * - $classes_array: Array of html class attribute values. It is flattened
- *   into a string within the variable $classes.
- * - $block_zebra: Outputs 'odd' and 'even' dependent on each block region.
- * - $zebra: Same output as $block_zebra but independent of any block region.
- * - $block_id: Counter dependent on each block region.
- * - $id: Same output as $block_id but independent of any block region.
- * - $is_front: Flags true when presented in the front page.
- * - $logged_in: Flags true when the current user is a logged-in member.
- * - $is_admin: Flags true when the current user is an administrator.
- * - $block_html_id: A valid HTML ID and guaranteed unique.
- *
  * @see template_preprocess()
  * @see template_preprocess_block()
  * @see template_process()
@@ -74,18 +41,34 @@
     <?php //if (!empty($content['field_adresse'])):?>
          <?php print $content; ?>
     <?php //endif;?>
-
+    <?php
+      $url = current_path();
+      $url = explode('/',$url);
+      $node = node_load($url[1]);
+      $shopping_s = "1 km";
+      $transport_s = "100 m";
+      $green_s = "300 m";
+      if($shopping = field_get_items('node',$node, 'field_afstand_til_shopping')) {
+        $shopping_s = $shopping[0]['value'];
+      }
+      if ($transport = field_get_items('node',$node, 'field_afstand_til_off_transport')) {
+        $transport_s = $transport[0]['value'];
+      }
+      if ($green = field_get_items('node',$node, 'field_afstand_til_groen')) {
+        $green_s = $green[0]['value'];
+      }
+    ?>
   </div>
   <div class="mapDetails greenGradient">
     <div class="row">
       <div class="large-3 small-12 columns">
-        <p class="map-shopping">Afstand til indkøb: 1 km</p>
+        <p class="map-shopping">Afstand til indk&oslash;b: <?php print $shopping_s ; ?></p>
       </div>
       <div class="large-3 small-12 columns">
-        <p class="map-transportation">Afstand til off. transport: 100 m</p>
+        <p class="map-transportation">Afstand til off. transport: <?php print $transport_s; ?></p>
       </div>
       <div class="large-6 small-12 columns">
-         <p class="map-tree">Afstand til grønne områder 300 m</p>
+         <p class="map-tree">Afstand til grønne omr&aring;der: <?php print $green_s;  ?></p>
       </div>
     </div>
    </div>

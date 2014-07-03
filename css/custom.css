@@ -238,6 +238,10 @@ p {
   }
 
 }
+
+.node-medarbejde.view-mode-full li {
+  max-width: 50%
+}
 /*  breakpoint 768px table and PC desktop version */
 @media screen and (min-width: 48em){
   #overlay {
