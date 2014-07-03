@@ -1,19 +1,15 @@
 /* Change logo according to page body class. */
 .page-beretninger-hans-knudsens-plads .logo img,
 .taxonomy-hans-knudsens-plads .logo img {
-  content: url('/sites/all/themes/campo_foundation/img/Center_Campo_Hans_knudsen_RGB.png');
 } 
 .page-beretninger-bofaellesskaberne .logo img,
 .taxonomy-bofaellesskaberne-i-campo .logo img {
-  content: url('/sites/all/themes/campo_foundation/img/Center_Campo_bofaellesskaberne_RGB.png');
 }
 .page-beretninger-kysten .logo img,
 .taxonomy-kysten .logo img {
-  content: url('/sites/all/themes/campo_foundation/img/Center_Campo_kysten_RGB.png');
 }
 .page-beretninger-pallesvej .logo img,
 .taxonomy-pallesvej .logo img {
-  content: url('/sites/all/themes/campo_foundation/img/Center_Campo_pallesvej_RGB.png');
 }
 
 /* End of change logo */

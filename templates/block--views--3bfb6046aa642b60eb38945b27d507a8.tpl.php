@@ -52,11 +52,27 @@
   <span class="sectionShadow"></span>
      <div class="row">
       <div class="large-8 columns">
-        <h2<?php print $title_attributes; ?>><?php print $block->subject; ?> </h2>
+      <?php
+        $url = current_path();
+        $url = explode('/',$url);
+        $node = node_load($url[1]);
+        if(isset($node->field_tags['und'])) {
+          $tid = $node->field_tags['und'][0]['tid'];
+          $term = taxonomy_term_load($tid);
+          $h2_title = 'Beretninger fra ' . $term->name;
+          $link_r = '/beretninger/'. $tid;
+        }
+        else {
+          $h2_title = 'Beretninger fra Hverdagen';
+          $link_r = '/beretninger/alle';
+        }
+        print '
+        <h2 class="block-title"> '.$h2_title.' </h2>';
+      ?>
       </div>
       <div class="large-3 columns">
-
-        <p style="padding-top: 13px;  margin-bottom: 0;" class="right"><a href="/beretninger/bofaellesskaberne">Se flere beretninger</a></p>
+ 
+        <p style="padding-top: 13px;  margin-bottom: 0;" class="right"><a href="<?php print $link_r;?>">Se flere beretninger</a></p>
 
        </div>
      </div>

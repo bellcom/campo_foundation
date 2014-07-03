@@ -17,7 +17,7 @@ Drupal.behaviors.campo_foundation = {
        $(document).ready(function(){
            var gridSize = getGridSize();
            // Change page logo and there links according to body class.
-           $(".page-beretninger-hans-knudsens-plads .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_Hans_knudsen_RGB.png");           
+/*           $(".page-beretninger-hans-knudsens-plads .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_Hans_knudsen_RGB.png");           
            $(".taxonomy-hans-knudsens-plads .logo a").attr("href", "/botilbud/hans-knudsens-plads");
            $(".taxonomy-hans-knudsens-plads .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_Hans_knudsen_RGB.png");
 $(".page-beretninger-bofaellesskaberne .logo img").attr("src", "/sites/all/themes/campo_foundation/img/Center_Campo_bofaellesskaberne_RGB.png");
@@ -34,7 +34,7 @@ $(".page-beretninger-bofaellesskaberne .logo img").attr("src", "/sites/all/theme
            $(".page-beretninger-bofaellesskaberne .logo a").attr("href", "/botilbud/bofællesskaberne-i-campo");
            $(".page-beretninger-pallesvej .logo a").attr("href", "/botilbud/pallesvej");
            $(".page-beretninger-kysten .logo a").attr("href", "/botilbud/kysten");
-
+*/
            // replace '-' to space in the sideMenu. 
             var str = "<h3>"+ $(".sideMenuHolder h2").text().replace('_',' ')+"</h3>";
                 str = str.replace('_',' ');
@@ -62,7 +62,10 @@ $(".page-beretninger-bofaellesskaberne .logo img").attr("src", "/sites/all/theme
 		flexslider.vars.maxItems = gridSize;
 */			
 		});
-
+      var qty = $('.view-thumbnail-carousel-of-ambassadors-list ul li').length;
+      if (qty < 2) {
+        $('.view-thumbnail-carousel-of-ambassadors-list ul li').css('width','25%');
+      }
      function scrollToDiv(element,navheight){
                 var offset = element.offset();
                // var offset = document.getElementById(element).offsetTop;

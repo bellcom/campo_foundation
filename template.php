@@ -98,12 +98,12 @@ function taxonomy_node_get_terms($node, $key = 'tid') {
 function campo_foundation_preprocess_page(&$variables) {
   // the 4 botilbud page. node type is center. 
   if (!empty($variables['node']) && $variables['node']->type == 'center') {
-    if ($variables['node']->nid == 6 || $variables['node']->nid == 7 || $variables['node']->nid == 67 || $variables['node']->nid == 66 || $variables['node']->nid == 69) {
+/*    if ($variables['node']->nid == 6 || $variables['node']->nid == 7 || $variables['node']->nid == 67 || $variables['node']->nid == 66 || $variables['node']->nid == 69) {
       $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->nid;
     } 
-    else {
+    else {*/
       $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
-    }
+   /*}*/
   }
   // the node-type: page, aka - afdelinger underside, there are 2 special page-pages: botilbud, center campo forside(nid = 119).
   if (!empty($variables['node']) && $variables['node']->type == 'page' &&  $variables['node']->title != 'Botilbud') {
@@ -131,8 +131,6 @@ function campo_foundation_preprocess_page(&$variables) {
       $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
     }
   }
-
-
 
 }
 
