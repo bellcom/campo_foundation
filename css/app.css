@@ -552,7 +552,7 @@ section.section-reports {width: 100%; background: #dbd7cc; padding-top: 25px; pa
 
 .reportsList li .reportListContent {background: #fff; padding: 1.25em; cursor: pointer; min-height: 255px; position:relative;}
 
-.reportListContent p {margin-bottom: 0; font-size: 0.7em; padding-right: 15px !important;}
+.reportListContent p {margin-bottom: 0; font-size: 0.7em; padding-right: 15px !important; height: 20px;}
 
 .arrow {position: absolute; right: 15px; bottom: 15px; margin-top: -16px; width: 16px; height: 16px; background: url(../img/arrow_circle_small_green_right.png) no-repeat 0 0;}
 

@@ -33,7 +33,7 @@
       ?>
       </div>
       <div class="large-3 columns">
-
+ 
         <p style="padding-top: 13px;  margin-bottom: 0;" class="right"><a href="<?php print $link_r; ?>">Se flere beretninger</a></p>
 
        </div>
